@@ -1,1 +1,0 @@
-@call node precompiler.js %*

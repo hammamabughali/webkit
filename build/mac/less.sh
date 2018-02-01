@@ -1,1 +1,0 @@
-lessc ../../src/less/main.less > ../../bin/public/css/main.css

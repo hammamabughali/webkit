@@ -1,1 +1,0 @@
-ALTER TABLE `tracks` ADD `imageUrl` TEXT NOT NULL , ADD `scoreTotal` INT UNSIGNED NOT NULL ;

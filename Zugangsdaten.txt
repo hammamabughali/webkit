@@ -1,9 +1,0 @@
-[LIVE]
-Server: cuboro.das-onlinespiel.de
-IP: 10.10.219.108
-SSH-User: cuboro
-SSH-PW: Rohs7kus
-DB-Host: hosting-db.kr3m.com
-DB-User: cuboro
-DB-PW: Rohs7kus
-DB-Name: cuboro

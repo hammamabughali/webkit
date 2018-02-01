@@ -1,1 +1,0 @@
-ALTER TABLE `tracks` ADD `previousId` INT(10) UNSIGNED NOT NULL AFTER `scoreTotal`, ADD `previousSavedWhen` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP AFTER `previousId`, ADD `forwardId` INT(10) UNSIGNED NOT NULL AFTER `previousSavedWhen`, ADD `forwardSavedWhen` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP AFTER `forwardId`, ADD INDEX (`previousId`), ADD INDEX (`forwardId`);

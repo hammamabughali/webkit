@@ -1,2 +1,0 @@
-ALTER TABLE `tracks` ADD `regionId` VARCHAR(32) NOT NULL DEFAULT 'MAIN' AFTER `ownerId`, ADD INDEX (`regionId`);
-ALTER TABLE `tracks` ADD FOREIGN KEY (`regionId`) REFERENCES `region_variants`(`id`) ON DELETE RESTRICT ON UPDATE CASCADE;
