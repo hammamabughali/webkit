@@ -1,0 +1,64 @@
+<NotepadPlus>
+    <UserLang name="TypeScript" ext="ts" udlVersion="2.1">
+        <Settings>
+            <Global caseIgnored="no" allowFoldOfComments="no" foldCompact="no" forcePureLC="0" decimalSeparator="0" />
+            <Prefix Keywords1="no" Keywords2="no" Keywords3="no" Keywords4="no" Keywords5="no" Keywords6="no" Keywords7="no" Keywords8="no" />
+        </Settings>
+        <KeywordLists>
+            <Keywords name="Comments">00// 01 02 03/* 04*/</Keywords>
+            <Keywords name="Numbers, prefix1"></Keywords>
+            <Keywords name="Numbers, prefix2">0x</Keywords>
+            <Keywords name="Numbers, extras1">A B C D E F a b c d e f</Keywords>
+            <Keywords name="Numbers, extras2"></Keywords>
+            <Keywords name="Numbers, suffix1"></Keywords>
+            <Keywords name="Numbers, suffix2"></Keywords>
+            <Keywords name="Numbers, range"></Keywords>
+            <Keywords name="Operators1">... { } ( ) [ ] , . ; : &amp;&amp; || | = + - * + / += -= /= ^= |= &amp;= *= == != ! &lt; &gt; === !== ?:</Keywords>
+            <Keywords name="Operators2"></Keywords>
+            <Keywords name="Folders in code1, open"></Keywords>
+            <Keywords name="Folders in code1, middle"></Keywords>
+            <Keywords name="Folders in code1, close"></Keywords>
+            <Keywords name="Folders in code2, open"></Keywords>
+            <Keywords name="Folders in code2, middle"></Keywords>
+            <Keywords name="Folders in code2, close"></Keywords>
+            <Keywords name="Folders in comment, open"></Keywords>
+            <Keywords name="Folders in comment, middle"></Keywords>
+            <Keywords name="Folders in comment, close"></Keywords>
+            <Keywords name="Keywords1">constructor var in module extends implements throw export class declare static this super while if for else new return instanceof typeof public private protected interface switch try case catch delete break function require default eval continue parseInt parseFloat enum do isNaN alert confirm prompt get set setInterval setTimeout clearInterval clearTimeout package of let const decodeURIComponent encodeURIComponent encodeURI decodeURI abstract yield import type atob btoa getComputedStyle from namespace as is keyof async await readonly</Keywords>
+            <Keywords name="Keywords2">string object number any boolean Function void Array Error Date Object RegExp Position PositionError Buffer FileList Math JSON String Boolean Number Event JQuery JQueryEventObject XMLHttpRequest ActiveXObject XDomainRequest Window IArguments JQueryKeyEventObject BaseJQueryEventObject JQueryInputEventObject JQueryMouseEventObject JQueryPopStateEventObject JQueryXHR Float32Array Uint16Array File FileReader Blob Image TouchEvent TouchList Touch DOMParser XMLDocument NodeList Element XMLSerializer ArrayBuffer URL HTMLElement SVGElement HTMLMediaElement HTMLDivElement HTMLCanvasElement IDBDatabase IDBOpenDBRequest IDBVersionChangeEvent NodeBuffer HTMLIFrameElement Callback StatusCallback SuccessCallback AnyCallback StringCallback BooleanCallback ErrorCallback CB ParamsCallback NumberCallback Document HTMLImageElement CanvasRenderingContext2D WebGLRenderingContext WebGL2RenderingContext ImageBitmapRenderingContext DataView SharedArrayBuffer Int8Array Uint8Array Uint8ClampedArray Int16Array Int32Array Uint32Array Float64Array HTMLSelectElement HTMLInputElement EventListenerOrEventListenerObject KeyboardEvent ImageData ArrayLike HTMLVideoElement MediaStream MediaStreamTrack MediaTrackSettings MediaTrackConstraints Promise</Keywords>
+            <Keywords name="Keywords3">true false null undefined Infinity</Keywords>
+            <Keywords name="Keywords4">kr3m dl strombi cas sl playground lc PIXI pogo omni ads portal chess frpg wh40krpg ft pg2 cuboro gf crpg THREE CANNON</Keywords>
+            <Keywords name="Keywords5">arguments window document navigator localStorage sessionStorage frameElement console global parent top location indexedDB</Keywords>
+            <Keywords name="Keywords6">callback errorCallback next thenDone loopDone callbacks timeoutCallback loadedCallback startCallback doneCallback exit exitCs nextBatch dataCallback listener elseDone mapCallback reduceCallback mapDone reduceDone emit switchDone handler done abort fork successCallback failureCallback reject resolve</Keywords>
+            <Keywords name="Keywords7"></Keywords>
+            <Keywords name="Keywords8"></Keywords>
+            <Keywords name="Delimiters">00&quot; 01\ 02((&quot; EOL)) 03&apos; 04\ 05((&apos; EOL)) 06(/ 06/^ 06/\ 07\ 07\ 07\ 08/ 08/ 08/ 09` 10\ 11` 12## 13 14## 15 16 17 18 19 20 21 22 23</Keywords>
+        </KeywordLists>
+        <Styles>
+            <WordsStyle name="DEFAULT" fgColor="000000" bgColor="FFFFFF" fontName="" fontStyle="0" nesting="0" />
+            <WordsStyle name="COMMENTS" fgColor="008000" bgColor="FFFFFF" fontName="" fontStyle="0" nesting="0" />
+            <WordsStyle name="LINE COMMENTS" fgColor="008000" bgColor="FFFFFF" fontName="" fontStyle="0" nesting="0" />
+            <WordsStyle name="NUMBERS" fgColor="FF0000" bgColor="FFFFFF" fontName="" fontStyle="0" nesting="0" />
+            <WordsStyle name="KEYWORDS1" fgColor="0000FF" bgColor="FFFFFF" fontName="" fontStyle="0" nesting="0" />
+            <WordsStyle name="KEYWORDS2" fgColor="FF8000" bgColor="FFFFFF" fontName="" fontStyle="0" nesting="0" />
+            <WordsStyle name="KEYWORDS3" fgColor="FF0000" bgColor="FFFFFF" fontName="" fontStyle="0" nesting="0" />
+            <WordsStyle name="KEYWORDS4" fgColor="FF00FF" bgColor="FFFFFF" fontName="" fontStyle="0" nesting="0" />
+            <WordsStyle name="KEYWORDS5" fgColor="800000" bgColor="FFFFFF" fontName="" fontStyle="0" nesting="0" />
+            <WordsStyle name="KEYWORDS6" fgColor="808000" bgColor="FFFFFF" fontName="" fontStyle="0" nesting="0" />
+            <WordsStyle name="KEYWORDS7" fgColor="000000" bgColor="FFFFFF" fontName="" fontStyle="0" nesting="0" />
+            <WordsStyle name="KEYWORDS8" fgColor="000000" bgColor="FFFFFF" fontName="" fontStyle="0" nesting="0" />
+            <WordsStyle name="OPERATORS" fgColor="000000" bgColor="FFFFFF" fontName="" fontStyle="0" nesting="0" />
+            <WordsStyle name="FOLDER IN CODE1" fgColor="000000" bgColor="FFFFFF" fontName="" fontStyle="0" nesting="0" />
+            <WordsStyle name="FOLDER IN CODE2" fgColor="000000" bgColor="FFFFFF" fontName="" fontStyle="0" nesting="0" />
+            <WordsStyle name="FOLDER IN COMMENT" fgColor="000000" bgColor="FFFFFF" fontName="" fontStyle="0" nesting="0" />
+            <WordsStyle name="DELIMITERS1" fgColor="FF0000" bgColor="FFFFFF" fontName="" fontStyle="0" nesting="0" />
+            <WordsStyle name="DELIMITERS2" fgColor="FF0000" bgColor="FFFFFF" fontName="" fontStyle="0" nesting="0" />
+            <WordsStyle name="DELIMITERS3" fgColor="8000FF" bgColor="FFFFFF" fontName="" fontStyle="0" nesting="0" />
+            <WordsStyle name="DELIMITERS4" fgColor="FF0000" bgColor="FFFFFF" fontName="" fontStyle="0" nesting="0" />
+            <WordsStyle name="DELIMITERS5" fgColor="008080" bgColor="FFFFFF" fontName="" fontStyle="0" nesting="0" />
+            <WordsStyle name="DELIMITERS6" fgColor="000000" bgColor="FFFFFF" fontName="" fontStyle="0" nesting="0" />
+            <WordsStyle name="DELIMITERS7" fgColor="000000" bgColor="FFFFFF" fontName="" fontStyle="0" nesting="0" />
+            <WordsStyle name="DELIMITERS8" fgColor="000000" bgColor="FFFFFF" fontName="" fontStyle="0" nesting="0" />
+        </Styles>
+    </UserLang>
+</NotepadPlus>

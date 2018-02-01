@@ -1,0 +1,7 @@
+ {
+  "appName": "${settings.appName}",
+  "shareUrl": "${settings.shareUrl}",
+  "ogUrl": "${settings.og.url}",
+  "cheat": ${settings.cheat},
+  "version": "0.83.0"
+}

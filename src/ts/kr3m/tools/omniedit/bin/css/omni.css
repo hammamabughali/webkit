@@ -1,0 +1,160 @@
+.button {
+  cursor: pointer;
+  margin: 5px;
+  background: white;
+  border: solid grey 1px;
+  padding: 5px;
+  border-radius: 10px;
+  box-shadow: 3px 3px 1px darkgrey;
+  color: black;
+  text-decoration: none;
+}
+.button:hover {
+  background-color: lightblue;
+}
+.downloadButton {
+  cursor: pointer;
+  margin: 5px;
+  background: white;
+  border: solid grey 1px;
+  padding: 5px;
+  border-radius: 10px;
+  box-shadow: 3px 3px 1px darkgrey;
+  color: black;
+  text-decoration: none;
+}
+.downloadButton:hover {
+  background-color: lightblue;
+}
+.closeButton {
+  cursor: pointer;
+  position: absolute;
+  top: 2px;
+  right: 3px;
+  background: white;
+  border-radius: 5px;
+  border: none;
+}
+.closeButton:hover {
+  background-color: lightblue;
+}
+.checkboxGroup {
+  max-width: 500px;
+}
+.checkbox {
+  display: inline-block;
+  width: 150px;
+  white-space: nowrap;
+  cursor: pointer;
+}
+.checkbox .box {
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  background-image: url("../img/unchecked.png");
+  margin-right: 5px;
+}
+.checkbox .box.checked {
+  background-image: url("../img/checked.png");
+}
+.checkbox .label {
+  display: inline-block;
+  overflow: hidden;
+}
+table.podTable {
+  background-color: white;
+  border-collapse: collapse;
+  border: solid black 2px;
+  margin-top: 10px;
+}
+table.podTable tr th {
+  border: solid grey 1px;
+  padding: 5px;
+}
+table.podTable tr td {
+  border: solid grey 1px;
+  padding: 5px;
+}
+.adjustImageTransformer canvas {
+  border: solid black 1px;
+  padding: 0px;
+}
+.htmlEditor {
+  background-color: white;
+  border: solid black 1px;
+  max-height: 90vh;
+  max-width: 90vw;
+  padding: 1%;
+}
+.htmlEditor .dropdowns {
+  width: 100%;
+}
+.htmlEditor .buttons {
+  width: 100%;
+}
+.htmlEditor .header {
+  width: 100%;
+}
+.htmlEditor .content {
+  border: solid black 1px;
+  overflow: scroll;
+  min-height: 20vh;
+  width: 100%;
+}
+body {
+  padding: 0px;
+  margin: 0px;
+  background-color: lightgrey;
+}
+.dropArea {
+  margin: 0px;
+  padding: 0px;
+  min-width: 97vw;
+  min-height: 97vh;
+}
+.headerButtons {
+  padding: 10px;
+}
+.clickBlocker {
+  background: grey;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  opacity: 0.5;
+}
+.popup {
+  background-color: white;
+  border: solid black 1px;
+  border-radius: 5px;
+  max-width: 80vw;
+  padding: 20px;
+}
+.downloadButtons {
+  background-color: white;
+  border: solid black 1px;
+  border-radius: 5px;
+  max-width: 80vw;
+  padding: 20px;
+}
+.downloadButtons .downloadButton {
+  display: inline-block;
+}
+.tagsPopup {
+  background-color: white;
+  border: solid black 1px;
+  border-radius: 5px;
+  max-width: 80vw;
+  padding: 20px;
+}
+.sizePopup {
+  background-color: white;
+  border: solid black 1px;
+  border-radius: 5px;
+  max-width: 80vw;
+  padding: 20px;
+}
+.screenManager {
+  padding: 10px;
+}

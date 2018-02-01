@@ -1,0 +1,11 @@
+{
+  "appName": "Cuboro Webkit",
+  "debug": true,
+  "hasRaffle": false,
+  "isIframe": false,
+  "customerUrl": "",
+  "shareUrl": "https://cuboro.das-onlinespiel.de/share",
+  "ogUrl": "https://cuboro.das-onlinespiel.de",
+  "cheat": true,
+  "version": "0.83.0"
+}

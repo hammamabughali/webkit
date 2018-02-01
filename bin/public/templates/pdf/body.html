@@ -1,0 +1,199 @@
+<html>
+<head>
+    <base href="../.."/>
+    <style type="text/css">
+
+        body {
+            font-family: Arial;
+        }
+        .divTable{
+            display: table;
+            width: 100%;
+            font-size: 24px;
+        }
+        .divTableRow {
+            display: table-row;
+        }
+
+        .divTableCell {
+            height: 193px;
+            width: 181px;
+            display: table-cell;
+            padding: 0px 3px 10px 0px;
+        }
+
+        .divTableFoot {
+            background-color: #EEE;
+            display: table-footer-group;
+            font-weight: bold;
+        }
+
+        .divTableBody {
+            display: table-row-group;
+        }
+
+
+        .cubeinfo {
+             text-align: center;
+            margin-bottom: 5px;
+            background-color: #cfcfcf;
+            display: block;
+        }
+
+        .spanCounterCuber {
+            margin: 3px 36px 0 24px;
+        }
+
+        /** layer **/
+        .ldivTable{
+            display: table;
+            font-size: 16px;
+            float: left;
+            margin-right: 60px;
+            margin-bottom: 30px;
+            width: 450px;
+        }
+        .ldivTableRow {
+            display: table-row;
+        }
+        .ldivTableHeading {
+            background-color: #EEE;
+            display: table-header-group;
+        }
+        .ldivTableCell, .divTableHead {
+            border: 1px solid #999999;
+            display: table-cell;
+            //padding: 2px 2px 2px 11px;
+            width: 30px;
+            height: 30px;
+        }
+        .ldivTableHeading {
+            background-color: #EEE;
+            display: table-header-group;
+            font-weight: bold;
+        }
+        .ldivTableFoot {
+            background-color: #EEE;
+            display: table-footer-group;
+            font-weight: bold;
+        }
+        .ldivTableBody {
+            display: table-row-group;
+        }
+
+
+        .tg  {border-collapse:collapse;border-spacing:0; width: 100%;}
+        .tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;overflow:hidden;word-break:normal;}
+        .tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;overflow:hidden;word-break:normal;}
+        .tg .tg-8ay2{font-size:24px;font-family:Arial, Helvetica, sans-serif !important;}
+        .tg .tg-cdbx{font-size:24px;font-family:Arial, Helvetica, sans-serif !important;;font-weight:bold;vertical-align:top}
+        .tg .tg-0d6z{font-weight:bold;font-size:24px;font-family:Arial, Helvetica, sans-serif !important;;background-color:#cfcfcf; text-align: left;}
+        .tg .tg-5cmf{font-weight:bold;font-size:24px;font-family:Arial, Helvetica, sans-serif !important;;background-color:#cfcfcf}
+        .tg .tg-rclh{font-size:24px;font-family:Arial, Helvetica, sans-serif !important;;text-align:right}
+        .tg .tg-lz1w{font-size:24px;font-family:Arial, Helvetica, sans-serif !important;;text-align:right;vertical-align:top}
+
+    </style>
+</head>
+<body>
+
+<br style="clear: both;">
+<div class="date">
+    <div style="font-size: 26px;">loc(PDF_DATE_DATE) ##DATE:date##</div>
+    <div style="font-size: 26px; font-weight: bold">
+        ##TRACKNAME##
+    </div>
+</div>
+<div style="clear: both; height: 10px;" ></div>
+<div style="font-size: 28px;font-weight:bold;">
+    loc(PDF_YOUR_TRACK)
+</div>
+
+<img src="##SCREENSHOT##" />
+
+
+<div style="clear: both; page-break-before: always; width: 100%;" ></div>
+<div style="clear: both; height: 30px;" ></div>
+<div style="font-weight: bold; font-family: Arial; font-size: 28px;">loc(PDF_SETS_TEXT):</div>
+<div style="clear: both; height: 30px;" ></div>
+##PDF_YOUR_USED_SETS##
+
+<div style="clear: both; width: 100%;height: 100px;" ></div>
+
+<!--Auswertung beginn -->
+<table class="tg" border="0">
+    <tr>
+        <th class="tg-0d6z"></th>
+        <th class="tg-0d6z" colspan="3">loc(PDF_TRACK_EVALUATION)</th>
+        <th class="tg-5cmf"></th>
+        <th class="tg-0d6z" colspan="2">loc(PDF_TRACK_COMMENTS)</th>
+    </tr>
+    <tr>
+        <td class="tg-8ay2"></td>
+        <td class="tg-8ay2">loc(PDF_CUBES_TEXT):</td>
+        <td class="tg-rclh">##PDF_CUBES_NUMBERS## x 01</td>
+        <td class="tg-8ay2">= ##PDF_CUBES_NUMBERS_SCORE##</td>
+        <td class="tg-8ay2" rowspan="8"></td>
+        <td class="tg-8ay2" colspan="2" rowspan="8">##PDF_COMMENTS##</td>
+    </tr>
+    <tr>
+        <td class="tg-8ay2"></td>
+        <td class="tg-8ay2">loc(PDF_TRACK_ELEMENTS_TEXT):</td>
+        <td class="tg-rclh">##PDF_TRACK_ELEMENTS## x 02</td>
+        <td class="tg-8ay2">= ##PDF_TRACK_ELEMENTS_SCORE##</td>
+    </tr>
+    <tr>
+        <td class="tg-8ay2"></td>
+        <td class="tg-8ay2"></td>
+        <td class="tg-rclh"></td>
+        <td class="tg-8ay2"></td>
+    </tr>
+    <tr>
+        <td class="tg-8ay2"></td>
+        <td class="tg-8ay2">loc(PDF_TRACK_2_ELEMENTS_TEXT):</td>
+        <td class="tg-rclh">##PDF_TRACK_2_ELEMENTS## x 04</td>
+        <td class="tg-8ay2">= ##PDF_TRACK_2_ELEMENTS_SCORE##</td>
+    </tr>
+    <tr>
+        <td class="tg-8ay2"></td>
+        <td class="tg-8ay2">loc(PDF_TRACK_3_ELEMENTS_TEXT):</td>
+        <td class="tg-rclh">##PDF_TRACK_3_ELEMENTS## x 12</td>
+        <td class="tg-8ay2">= ##PDF_TRACK_3_ELEMENTS_SCORE##</td>
+    </tr>
+    <tr>
+        <td class="tg-8ay2"></td>
+        <td class="tg-8ay2">loc(PDF_TRACK_4_ELEMENTS_TEXT):</td>
+        <td class="tg-rclh">##PDF_TRACK_4_ELEMENTS## x 16</td>
+        <td class="tg-8ay2">= ##PDF_TRACK_4_ELEMENTS_SCORE##</td>
+    </tr>
+    <tr>
+        <td class="tg-8ay2"></td>
+        <td class="tg-8ay2">loc(PDF_TRACK_PLUS_UNDER_ELEMENTS_TEXT):</td>
+        <td class="tg-rclh">##PDF_TRACK_PLUS_UNDER_ELEMENTS## x 04</td>
+        <td class="tg-8ay2">= ##PDF_TRACK_PLUS_UNDER_ELEMENTS_SCORE##</td>
+    </tr>
+    <tr>
+        <td class="tg-cdbx"></td>
+        <td class="tg-cdbx">loc(PDF_TRACK_SCORETOTAL_TEXT):</td>
+        <td class="tg-lz1w"></td>
+        <td class="tg-cdbx">= ##PDF_TRACK_SCORETOTAL##</td>
+    </tr>
+</table>
+<!-- Auswertung End  -->
+<div style="clear: both; width: 100%;height: 100px"></div>
+<div style="clear: both; width: 100%; page-break-before: always;"></div>
+<div style="clear: both; width: 100%;height: 20px"></div>
+
+<div style="font-weight: bold; font-size: 28px; font-family: Arial;">loc(PDF_TRACK_NEEDED_ELMENTS_TEXT):</div>
+<div style="clear: both; width: 100%;height: 20px"></div>
+<!-- beginn Würfel -->
+##PDF_CUBE_TABLE##
+<!-- End Würfel -->
+<div style="clear: both; width: 100%;height: 10px;  page-break-before: always"></div>
+<div style="clear: both; width: 100%;height: 20px"></div>
+<div style="font-weight: bold; font-size: 28px; font-family: Arial;">loc(PDF_TRACK_LAYER_TEXT):</div>
+<div style="clear: both; width: 100%;height: 20px"></div>
+<!-- Beginn Ebenen -->
+##PDF_LAYER_TABLE##
+<!-- End Ebenen -->
+</body>
+</html>

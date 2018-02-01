@@ -1,0 +1,229 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta charset="utf-8">
+		<title>JavaScript Sandbox Reference</title>
+	</head>
+	<body>
+		<style>
+			body {padding: 1em;}
+
+			h1, h2
+			{
+				background-color: #7f0000;
+				border-radius: 0.5em;
+				box-shadow: lightgrey 0.125em 0.125em;
+				color: white;
+				padding: 0.5em;
+			}
+
+			h1 {font-size: 1.5em;}
+			h2
+			{
+				font-size: 1.25em;
+				margin-top: 3em;
+			}
+
+			dt {font-weight: bold;}
+			dd {margin-bottom: 1em;}
+
+			pre
+			{
+				overflow: auto;
+				tab-size: 2;
+			}
+
+			.example
+			{
+				background-color: #efefef;
+				border: solid black 1px;
+				padding: 1em;
+			}
+
+			.dont
+			{
+				background-color: #ffdfdf;
+				border: solid black 1px;
+				padding: 1em;
+				max-width: 35vw;
+			}
+
+			.do
+			{
+				background-color: #dfffdf;
+				border: solid black 1px;
+				padding: 1em;
+				max-width: 35vw;
+			}
+
+			.dontdo td
+			{
+				vertical-align: top;
+			}
+		</style>
+
+
+
+		<h1>JavaScript Sandbox Reference</h1>
+
+		<p>This document contains a detailed description of all the global objects and functions
+		usable in the JavaScript sandbox that is used by the Fragment-handler. Code for the
+		sandbox is written in normal &lt;script&gt;-tags that have the server attribute set or have
+		the value "server" in the type-attribute.
+
+		<p>Everything in this document is subject to change. This version
+		of this document was last updated on <b style="color:red">06.06.2017</b>. If you have any
+		questions or suggestions contact <a href="mailto:jan.minar@kr3m.com">Jan Minar</a>.</p>
+
+
+
+		<h2>Global Objects</h2>
+
+		<h3>context</h3>
+		<p>The context object used for the current request. Be careful: the context object ist
+		converted to JSON and then converted back when it is sent to the sandbox, so only the
+		properties will be available, but no methods.</p>
+
+		<h3>document</h3>
+		<p>A simplified document object as used in client-side scripts. Currently it only contains
+		a read-only location property. If required it may be extended in the future.</p>
+
+		<h3>params</h3>
+		<p>The global params contains all of the get and post parameters sent in the sandbox'
+		site request. They are stored in associative arrays called "get" and "post" respectively.</p>
+
+		<h2>Output Functions</h2>
+
+		<h3>console.error(...params)</h3>
+		<p>This method outputs all of its given parameters to the server console / log file formatted
+		as an error output.</p>
+
+		<h3>console.log(...params)</h3>
+		<p>This method outputs all of its given parameters to the server console / log file.</p>
+
+		<h3>echo(...params)</h3>
+		<p>This method outputs all of its given parameters directly to the document source code. It
+		behaves just like the echo method of PHP or the document.writeln method for client-side
+		scripts.</p>
+
+		<h3>fragment(path, params?)</h3>
+		<p>Outputs the fragment with the given path directly to the document's source code. If params
+		are given, they are used as input parameters for the fragment.</p>
+
+		<h3>loc(id, tokens?)</h3>
+		<p>This method returns the localization text with the given id. If an associative array
+		with tokens is given, those are replaced in the localization text with their given
+		value.</p>
+		<p>What sources and languages are used for the localized texts depends on the used
+		Localization class but usually is automatically detected by the user's browser settings and
+		loaded from the language xml files in the application's public folder.</p>
+
+
+
+		<h2>File Access Functions</h2>
+
+		<h3>fsLib.readFile(file, options?, callback)</h3>
+		<p>This method can be used to read a file from the local hard drive. It is a direct binding to the
+		<a target="_blank" href="https://nodejs.org/dist/latest-v6.x/docs/api/fs.html#fs_fs_readfile_file_options_callback">
+		node.js method of the same name</a>.</p>
+
+		<h3>fsLib.readdir(path, options?, callback)</h3>
+		<p>This method can be used to read the contents of a folder on the local hard drive.
+		It is a direct binding to the
+		<a target="_blank" href="https://nodejs.org/dist/latest-v6.x/docs/api/fs.html#fs_fs_readdir_path_options_callback">
+		node.js method of the same name</a>.</p>
+
+		<h3>fsLib.stat(path, callback)</h3>
+		<p>This method can be used to get information about a file or folder on the local hard
+		drive. It is a direct binding to the
+		<a target="_blank" href="https://nodejs.org/dist/latest-v6.x/docs/api/fs.html#fs_fs_stat_path_callback">
+		node.js method of the same name</a>.</p>
+
+		<h3>fsLib.writeFile(file, data, options?, callback)</h3>
+		<p>This method can be used to save any data to a file on the local hard drive. It is
+		a direct binding to the
+		<a target="_blank" href="https://nodejs.org/dist/latest-v6.x/docs/api/fs.html#fs_fs_writefile_file_data_options_callback">
+		node.js method of the same name</a>.</p>
+
+
+
+		<h2>Web Access Functions</h2>
+
+		<h3>webLib.get(url, params?, callback)</h3>
+		<p>Sends a http GET request to the given url. If params are given, they are appended to the url
+		before the request is sent. After the result returns, callback will receive two parameters:
+		the content of the file (if successfull) and a http result code.</p>
+
+		<h3>webLib.getCached(url, ttl, callback)</h3>
+		<p>Sends a http GET request to the given url. If another get request to the same url was sent
+		less than ttl ms ago with webLib.getCached, return that request's result without sending an
+		actual request. callback will receive two parameters: the content of the file (if successfull)
+		and a http result code (even if returning a cached result).</p>
+
+		<h3>webLib.post(url, params?, callback)</h3>
+		<p>Sends a http POST request to the given url. If params are given, they are appended to the
+		request's body before the request is sent. After the result returns, callback will receive two
+		parameters: the content of the file (if successfull) and a http result code.</p>
+
+		<h3>webLib.relay(url, options, callback)</h3>
+		<p>This method will build a relay-url and return that to the callback function. A relay-url
+		is a url to the server that generated the relay-url. It will prompt the server to download
+		a resource from the original url given to the relay method and then to deliver that resource
+		as if it was its own.</p>
+		<p>To work properly, the relaying server has to have a registered relay handler (for example
+		kr3m.net2.handlers.Relay).</p>
+		<p>All options are optional. The following options are supported:
+		<dl>
+			<dt>cacheDuration</dt>
+			<dd>How long the resource is to be cached on the relaying server (in ms).</dd>
+			<dt>uriPrefix</dt>
+			<dd>The prefix added to the relay-url to make sure it is properly processed by the
+			relaying server's relay handler. It defaults to "/r/".</dd>
+		</dl>
+		</p>
+
+
+
+		<h2>Custom Functions (RPC)</h2>
+
+		<p>If the available methods aren't enough to cover a developer's requirements, additional
+		methods can be added using the Sandbox.addRpc() method. See that method's documentation
+		in the kr3m-framework for more details about how it works.</p>
+
+
+
+		<script>
+
+			function addSyntaxHighlighting()
+			{
+				var pres = document.getElementsByTagName("pre");
+				for (var i = 0; i < pres.length; ++i)
+				{
+					var code = pres[i].innerHTML;
+					var lines = code.split(/\r?\n/);
+					for (var j = 0; j < lines.length; ++j)
+					{
+						var newLine = lines[j].replace(/(\/\/[^#].*)/g, "<span style='color:magenta'>$1</span>");
+						if (newLine != lines[j])
+						{
+							lines[j] = newLine;
+						}
+						else
+						{
+							lines[j] = lines[j]
+								.replace(/:(\w+)\b/g, ":<span style='color:orange'>$1</span>")
+								.replace(/\b(private|protected|extends|implements|public|class|export|module|var|function|for|if|return|else)\b/g, "<span style='color:blue'>$1</span>");
+						}
+					}
+					code = lines.join("\n");
+					pres[i].innerHTML = code;
+				}
+			}
+
+			addSyntaxHighlighting();
+
+		</script>
+
+	</body>
+</html>

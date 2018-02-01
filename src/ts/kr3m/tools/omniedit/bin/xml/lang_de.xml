@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<texts>
+	<text id="ADD_COL"><![CDATA[Spalte hinzufügen]]></text>
+	<text id="ADD_LANGUAGE"><![CDATA[Sprache hinzufügen]]></text>
+	<text id="ADD_ROW"><![CDATA[Zeile hinzufügen]]></text>
+	<text id="ADD_STRING"><![CDATA[Text hinzufügen]]></text>
+	<text id="APP_TITLE"><![CDATA[OmniEdit]]></text>
+	<text id="BUTTON_MOVE_DOWN"><![CDATA[↓]]></text>
+	<text id="BUTTON_MOVE_LEFT"><![CDATA[←]]></text>
+	<text id="BUTTON_MOVE_RIGHT"><![CDATA[→]]></text>
+	<text id="BUTTON_MOVE_UP"><![CDATA[↑]]></text>
+	<text id="BUTTON_ROTATE_CCW"><![CDATA[↶]]></text>
+	<text id="BUTTON_ROTATE_CW"><![CDATA[↷]]></text>
+	<text id="BUTTON_ZOOM_IN"><![CDATA[+]]></text>
+	<text id="BUTTON_ZOOM_OUT"><![CDATA[-]]></text>
+	<text id="DELETE_COLUMNS"><![CDATA[Spalten löschen]]></text>
+	<text id="DROP_FILES_HERE"><![CDATA[Dateien per Drag & Drop hier einfügen]]></text>
+	<text id="HEIGHT"><![CDATA[Höhe]]></text>
+	<text id="NEW"><![CDATA[Neu]]></text>
+	<text id="SAVE"><![CDATA[Speichern]]></text>
+	<text id="SCREEN_ADJUSTIMAGE"><![CDATA[Bild anpassen]]></text>
+	<text id="SCREEN_DATAURL"><![CDATA[DataUrl]]></text>
+	<text id="SCREEN_HTMLEDITOR"><![CDATA[HTML Editor]]></text>
+	<text id="SCREEN_LOCALIZATION"><![CDATA[Lokalisierung]]></text>
+	<text id="SCREEN_PODTABLE"><![CDATA[PoD Table]]></text>
+	<text id="SELECT_MODE"><![CDATA[Bearbeitungsmodus auswählen:]]></text>
+	<text id="SET_SIZE"><![CDATA[Größe ändern]]></text>
+	<text id="TT_SCREEN_ADJUSTIMAGE"><![CDATA[Einfache Bildmanipulation]]></text>
+	<text id="TT_SCREEN_DATAURL"><![CDATA[DataURLs für geladene Dateien erzeugen]]></text>
+	<text id="TT_SCREEN_HTMLEDITOR"><![CDATA[Einfache HTML Texte bearbeiten]]></text>
+	<text id="TT_SCREEN_LOCALIZATION"><![CDATA[Lokalisierungsdateien vergleichen und mehrere zusammen bearbeiten]]></text>
+	<text id="TT_SCREEN_PODTABLE"><![CDATA[Bearbeiten von einfachen JSON, XML oder CSV Dateien in Tabellenform]]></text>
+	<text id="VISIBLE_COLUMNS"><![CDATA[Spalten ausblenden]]></text>
+	<text id="WIDTH"><![CDATA[Breite]]></text>
+</texts>

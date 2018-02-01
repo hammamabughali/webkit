@@ -1,0 +1,84 @@
+﻿<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="de">
+<head>
+    <title>${settings.appName}</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width">
+    <meta name="author" content="kr3m. media GmbH">
+    <meta name="rights" content="(c) 2016 kr3m. media GmbH">
+    <meta name="copyright" content="Copyright (c) 2016 kr3m. media GmbH">
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+    <meta name="apple-mobile-web-app-title" content="${settings.appName}"/>
+    <meta property="og:title" itemprop="name" name="title" content="${settings.og.title}"/>
+    <meta property="og:description" itemprop="description" name="description" content="${settings.og.description}"/>
+    <meta property="og:image" itemprop="image" content="${settings.og.image}"/>
+    <meta property="og:url" itemprop="url" content="${settings.og.url}"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+    <meta name="apple-mobile-web-app-title" content="${settings.appName}"/>
+    <link rel="apple-touch-icon" sizes="57x57" href="img/icons/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="img/icons/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="img/icons/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="img/icons/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="img/icons/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="img/icons/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="img/icons/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="img/icons/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/icons/apple-touch-icon-180x180.png">
+    <link rel="icon" type="image/png" href="img/icons/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="img/icons/android-chrome-192x192.png" sizes="192x192">
+    <link rel="icon" type="image/png" href="img/icons/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="img/icons/manifest.json">
+    <link rel="mask-icon" href="img/icons/safari-pinned-tab.svg" color="#000000">
+    <link rel="shortcut icon" href="img/icons/favicon.ico">
+    <meta name="msapplication-TileColor" content="#ffcc00">
+    <meta name="msapplication-TileImage" content="img/icons/mstile-144x144.png">
+    <meta name="msapplication-config" content="img/icons/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" type="text/css" href="css/main.css"/>
+</head>
+<body>
+<div id="kr3m">
+    <!--[if ie & lte IE 9]>
+    <div class="error">
+        <p>${settings.appName} ist optimiert für aktuelle HTML5-fähige Browser-Versionen.<br>
+            Bitte einen aktuellen Browser verwenden.</p>
+    </div>
+    <![endif]-->
+    <canvas id="playground"></canvas>
+    <canvas id="game"></canvas>
+    <div id="loader">
+        <div>
+            <div>
+                <span id="bar"></span>
+            </div>
+        </div>
+        <span id="progress">0%</span>
+    </div>
+</div>
+<noscript>
+    <div class="error">
+        <p>${settings.appName} benötigt Javascript.<br>Bitte Javascript in den Browsereinstellungen aktivieren und die Seite neu laden.</p>
+    </div>
+</noscript>
+<!--[if !IE | gt IE 9]> -->
+<script type="text/javascript" src="js/webfontloader.min.js"></script>
+<script type="text/javascript" src="js/greensock.min.js"></script>
+<script type="text/javascript" src="js/howler.min.js"></script>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/three.min.js"></script>
+<script type="text/javascript" src="js/cannon.min.js"></script>
+<script type="text/javascript" src="js/pixi.min.js"></script>
+<script type="text/javascript" src="js/track.js"></script>
+<script type="text/javascript" src="https://${cas.host}/cas.js"></script>
+<script type="text/javascript">
+	var casClient = new cas.Client("${cas.gameId}", {ingamePopupIds:["POPUP_EMAIL_VALIDATED", "POPUP_EMAIL_REMINDER", "POPUP_RESET_PASSWORD"]});
+</script>
+<script type="text/javascript" src="js/client.js?_=${settings.version}"></script>
+<!-- <![endif]-->
+</body>
+</html>

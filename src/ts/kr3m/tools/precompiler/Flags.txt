@@ -1,0 +1,20 @@
+Flags sollten aus folgender Liste ausgesucht werden:
+- APP          - Code, der nur für die (PhoneGap-)App verwendet werden soll
+- CLIENT       - Code, der nur auf der Clientseite (im Browser) benutzt werden kann
+- DEBUG        - Code, der nur während der Entwicklung ausgeführt werden soll
+- DEPRECATED   - Code, der nicht mehr verwendet werden soll weil er veraltet ist
+- DESKTOP      - Code, der nur in Versionen für Desktop Browser benutzt werden soll
+- ES5          - Code, der nur in Browsern mit EcmaScript 5 und drüber laufen soll
+- ES6          - Code, der nur in Browsern mit EcmaScript 6 und drüber laufen soll
+- EXPERIMENTAL - Code, der noch nicht verwendet werden soll weil er noch nicht zuverlässig funktioniert
+- HIDE_GLOBAL  - Code, der nicht in einem Module verpackt ist und am window-Objekt hängt
+- IE8          - Code, der nur für den Internet Explorer 8 benötigt wird
+- LOCALHOST    - Code, der nur in Versionen während der lokalen Entwicklung der Software benutzt werden soll
+- MOBILE       - Code, der nur in Versionen für mobile Browser benutzt werden soll
+- MOCKUP       - Code, der Dummydaten zurück gibt statt richtige Werte zu berechnen
+- PROFILING    - Code, der die Performance der Anwendung senkt aber Informationen über Performanceprobleme liefert
+- QS           - Code, der nur auf QS-Servern ausgeführt werden soll
+- RELEASE      - Code, der nur auf dem Ziel- / Live-Server ausgeführt werden soll
+- SERVER       - Code, der nur auf der Serverseite benutzt werden kann
+- UNITTESTS    - führt Unittests für alle Klassen / Funktionen aus, für die Testsuites definiert sind
+- VERBOSE      - Code, der zu extrem vielen ausführlichen Log-Ausgaben führt

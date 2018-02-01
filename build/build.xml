@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project basedir=".." default="live">
+
+	<property file="build/build.properties" />
+
+
+
+	<target name="live">
+		<echo>---------------------------------------------------------------</echo>
+		<echo>deploying to Live server</echo>
+		<echo>---------------------------------------------------------------</echo>
+		<phingcall target="deploy">
+			<property file="build/live.properties" />
+		</phingcall>
+	</target>
+
+
+
+	<target name="deploy">
+		<echo>---------------------------------------------------------------</echo>
+		<echo>starting deploy process</echo>
+		<echo>---------------------------------------------------------------</echo>
+		<phingcall target="stage"/>
+		<phingcall target="compile"/>
+		<phingcall target="less"/>
+		<phingcall target="templates"/>
+		<phingcall target="rsync"/>
+		<phingcall target="incVersion"/>
+		<phingcall target="commit"/>
+	</target>
+
+
+
+	<target name="less">
+		<echo>---------------------------------------------------------------</echo>
+		<echo>building css from less</echo>
+		<echo>---------------------------------------------------------------</echo>
+		<echo>lessc -x src/less/main.less > stage/public/css/main.css</echo>
+		<exec passthru="true" checkreturn="true" dir="." command="lessc -x src/less/main.less > stage/public/css/main.css"/>
+	</target>
+
+
+
+	<target name="compile">
+		<echo>---------------------------------------------------------------</echo>
+		<echo>compiling</echo>
+		<echo>---------------------------------------------------------------</echo>
+		<phingcall target="compileClient"/>
+		<phingcall target="compileServer"/>
+	</target>
+
+
+
+	<target name="compileClient">
+		<echo>---------------------------------------------------------------</echo>
+		<echo>compiling</echo>
+		<echo>---------------------------------------------------------------</echo>
+		<echo>node src/ts/kr3m/tools/precompiler/precompiler.js build src/ts/cuboro/client.ts -o stage/public/js/client.js ${compile.clientParams}</echo>
+		<exec passthru="true" checkreturn="true" dir="."
+			command="node src/ts/kr3m/tools/precompiler/precompiler.js build src/ts/cuboro/client.ts -o stage/public/js/client.js ${compile.clientParams}"/>
+	</target>
+
+
+
+	<target name="compileServer">
+		<echo>---------------------------------------------------------------</echo>
+		<echo>compiling</echo>
+		<echo>---------------------------------------------------------------</echo>
+		<echo>node src/ts/kr3m/tools/precompiler/precompiler.js build src/ts/cuboro/server.ts -o stage/server.js ${compile.serverParams}</echo>
+		<exec passthru="true" checkreturn="true" dir="."
+			command="node src/ts/kr3m/tools/precompiler/precompiler.js build src/ts/cuboro/server.ts -o stage/server.js ${compile.serverParams}"/>
+	</target>
+
+
+
+	<target name="stage">
+		<echo>---------------------------------------------------------------</echo>
+		<echo>create stage folder</echo>
+		<echo>---------------------------------------------------------------</echo>
+		<delete dir="stage" />
+		<copy todir="stage">
+			<fileset dir="bin">
+			</fileset>
+		</copy>
+	</target>
+
+
+
+	<target name="templates">
+		<echo>---------------------------------------------------------------</echo>
+		<echo>replace tokens</echo>
+		<echo>---------------------------------------------------------------</echo>
+		<move toDir="stage" overwrite="true">
+			<mapper type="regexp" from="^(.*)\.dist(\..*)$" to="\1\2" />
+			<fileset dir="stage">
+				<include name="**/*.dist.*" />
+			</fileset>
+			<filterchain>
+				<expandproperties/>
+			</filterchain>
+		</move>
+	</target>
+
+
+
+	<target name="rsync">
+		<echo>---------------------------------------------------------------</echo>
+		<echo>rsync to server</echo>
+		<echo>---------------------------------------------------------------</echo>
+		<chmod file="${rsync.keyfile}" mode="0700"/>
+		<echo>rsync -v -r stage/ &quot;${rsync.target}&quot; --rsh &quot;ssh -i ${rsync.keyfile} &quot;</echo>
+		<exec passthru="true" checkreturn="true" dir="." command="rsync -v -r stage/ &quot;${rsync.target}&quot; --rsh &quot;ssh -i ${rsync.keyfile} &quot;" />
+	</target>
+
+
+
+	<target name="incVersion">
+		<echo>---------------------------------------------------------------</echo>
+		<echo>incrementing version number</echo>
+		<echo>---------------------------------------------------------------</echo>
+		<exec passthru="true" checkreturn="true" dir="." command="node src/ts/kr3m/tools/incversion/incversion.js src/ts/cuboro/version.ts &quot;${version.pattern.ts}&quot;"/>
+		<exec passthru="true" checkreturn="true" dir="." command="node src/ts/kr3m/tools/incversion/incversion.js bin/public/js/data/config.json &quot;${version.pattern.json}&quot;"/>
+		<exec passthru="true" checkreturn="true" dir="." command="node src/ts/kr3m/tools/incversion/incversion.js bin/public/js/data/config.dist.json &quot;${version.pattern.json}&quot;"/>
+		<exec passthru="true" checkreturn="true" dir="." command="node src/ts/kr3m/tools/incversion/incversion.js build/build.properties &quot;${version.pattern.properties}&quot;"/>
+	</target>
+
+
+
+	<target name="commit">
+		<echo>---------------------------------------------------------------</echo>
+		<echo>committing to svn</echo>
+		<echo>---------------------------------------------------------------</echo>
+		<exec passthru="true" checkreturn="true" dir="." command="svn commit . -m &quot;version incremented&quot; --password kr3p1"/>
+	</target>
+
+</project>
